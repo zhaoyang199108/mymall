@@ -39,7 +39,7 @@
 		#{password,jdbcType=VARCHAR},
 		#{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{question,jdbcType=VARCHAR},
 		#{answer,jdbcType=VARCHAR}, #{role,jdbcType=INTEGER}, now(),
-		now()})
+		now())
 	</insert>
 	<insert id="insertSelective" parameterType="com.mymall.pojo.User">
 		insert into mmall_user
