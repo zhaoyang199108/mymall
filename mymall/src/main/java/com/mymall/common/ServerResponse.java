@@ -14,6 +14,10 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 //保证json在序列化的时候，如果value=null，key也会消失
 public class ServerResponse<T> implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int status;
 	private String msg;
 	private T data;

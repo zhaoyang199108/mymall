@@ -13,7 +13,6 @@ import com.mymall.common.ResponseCode;
 import com.mymall.common.ServerResponse;
 import com.mymall.pojo.User;
 import com.mymall.service.IUserService;
-import com.mymall.service.impl.UserServiceImpl;
 /**
  * @author zz
  *

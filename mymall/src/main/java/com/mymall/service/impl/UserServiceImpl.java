@@ -2,7 +2,6 @@ package com.mymall.service.impl;
 
 import java.util.UUID;
 
-import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +31,9 @@ public class UserServiceImpl implements IUserService {
 			ServerResponse.createByErrorMessage("密码错误");
 		}
 		user.setPassword(StringUtils.EMPTY);
-		return null;
+		return ServerResponse.createBySuccess("登录成功",user);
 	}
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public ServerResponse<String> register(User user){
 
 		ServerResponse volidResponse = this.checkValid(user.getUsername(), Const.USERNAME);
@@ -74,6 +74,7 @@ public class UserServiceImpl implements IUserService {
 		return ServerResponse.createBySuccessMessage("校验成功");
 	}
 	public ServerResponse<String> selectQuestion(String username){
+		@SuppressWarnings("rawtypes")
 		ServerResponse validResponse = this.checkValid(username, Const.USERNAME);
 		if(validResponse.isSuccess()){
 			//用户不存在
@@ -101,6 +102,7 @@ public class UserServiceImpl implements IUserService {
 		if(StringUtils.isBlank(forgetToken)){
 			return ServerResponse.createByErrorMessage("参数错误,token需要传递");
 		}
+		@SuppressWarnings("rawtypes")
 		ServerResponse validResponse = this.checkValid(username, Const.USERNAME);
 		if(validResponse.isSuccess()){
 			//用户不存在
