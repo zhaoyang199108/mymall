@@ -28,7 +28,7 @@ public class UserServiceImpl implements IUserService {
 		String md5Password = MD5Util.MD5EncodeUtf8(password);
 		User user = userMapper.selectLogin(username, md5Password);
 		if(user == null){
-			ServerResponse.createByErrorMessage("密码错误");
+			return ServerResponse.createByErrorMessage("密码错误");
 		}
 		user.setPassword(StringUtils.EMPTY);
 		return ServerResponse.createBySuccess("登录成功",user);
