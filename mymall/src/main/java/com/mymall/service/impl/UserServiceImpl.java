@@ -40,7 +40,7 @@ public class UserServiceImpl implements IUserService {
 		if(!volidResponse.isSuccess()){
 			return volidResponse;
 		}
-		volidResponse = this.checkValid(user.getUsername(), Const.EMAIL);
+		volidResponse = this.checkValid(user.getEmail(), Const.EMAIL);
 		if(!volidResponse.isSuccess()){
 			return volidResponse;
 		}
